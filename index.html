@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marketplace de panadería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="barra">
+    <h1>Marketplace de panadería</h1>
+    <button id="abrir-carrito" class="btn-carrito" type="button">
+      Carrito <span id="contador" class="contador">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="filtros" aria-label="Filtros del catálogo">
+      <div id="categorias" class="chips" role="group" aria-label="Categoría"></div>
+      <label class="vendedor">Vendedor
+        <select id="vendedor"></select>
+      </label>
+    </section>
+
+    <p id="resumen" class="resumen" aria-live="polite"></p>
+    <section id="catalogo" class="grilla" aria-label="Productos"></section>
+  </main>
+
+  <footer class="aviso">
+    <p>Las fotos son ilustrativas y fueron generadas con IA. Los precios de Éxito y Farmatodo se consultaron el 31 de octubre de 2026 y pueden cambiar. My Cake es una pastelería de ejemplo para este ejercicio.</p>
+  </footer>
+
+  <dialog id="carrito" aria-labelledby="titulo-carrito">
+    <h2 id="titulo-carrito">Tu carrito</h2>
+    <ul id="lineas" class="lineas"></ul>
+    <p class="total">Total <strong id="total">$0</strong></p>
+    <div class="acciones">
+      <button id="vaciar" class="btn-sec" type="button">Vaciar carrito</button>
+      <button id="cerrar" class="btn" type="button">Seguir comprando</button>
+    </div>
+  </dialog>
+
+  <script src="productos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

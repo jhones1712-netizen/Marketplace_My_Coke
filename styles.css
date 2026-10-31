@@ -1,0 +1,210 @@
+/* styles.css — paleta tomada de las fotos: mármol, loza azul verdosa y mantequilla */
+:root {
+  --fondo: #eef1ed;       /* mármol */
+  --superficie: #fbfcfa;  /* harina */
+  --tinta: #1d2b27;       /* café oscuro verdoso */
+  --loza: #2c6b78;        /* azul del plato */
+  --mantequilla: #f0c43f; /* acento */
+  --borde: #cdd5cf;
+  --suave: #5b6b66;
+  --titulo: "Fraunces", Georgia, serif;
+  --texto: "Work Sans", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: var(--texto);
+  line-height: 1.5;
+}
+
+h1, h2, h3 { font-family: var(--titulo); line-height: 1.2; margin: 0; }
+
+button, select { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--loza); outline-offset: 2px; }
+
+/* ---------- Barra superior ---------- */
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem clamp(1rem, 4vw, 3rem);
+  background: var(--tinta);
+  color: var(--superficie);
+}
+.barra h1 { font-size: clamp(1.15rem, 3.5vw, 1.75rem); font-weight: 700; }
+
+.btn-carrito {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--mantequilla);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--superficie);
+  cursor: pointer;
+}
+.contador {
+  min-width: 1.6rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--mantequilla);
+  color: var(--tinta);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------- Filtros ---------- */
+main { padding: 1.5rem clamp(1rem, 4vw, 3rem) 3rem; max-width: 1280px; margin: 0 auto; }
+
+.filtros { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.chip {
+  padding: 0.4rem 1rem;
+  border: 1.5px solid var(--tinta);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--tinta); color: var(--superficie); }
+
+.vendedor { display: flex; align-items: center; gap: 0.6rem; font-weight: 500; }
+.vendedor select {
+  padding: 0.4rem 0.6rem;
+  border: 1.5px solid var(--tinta);
+  border-radius: 6px;
+  background: var(--superficie);
+}
+
+.resumen { margin: 1.25rem 0 1rem; color: var(--suave); font-size: 0.95rem; }
+
+/* ---------- Catálogo ---------- */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: var(--superficie);
+  overflow: hidden;
+}
+
+.foto { position: relative; aspect-ratio: 1 / 1; background: var(--borde); }
+.foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.foto img.sin-foto { visibility: hidden; }
+
+.oferta {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  background: var(--mantequilla);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.cuerpo { display: flex; flex-direction: column; gap: 0.35rem; flex: 1; padding: 1rem; }
+.cuerpo h3 { font-size: 1.15rem; font-weight: 500; }
+.meta { margin: 0; color: var(--suave); font-size: 0.9rem; }
+.invima { margin: 0; color: var(--suave); font-size: 0.8rem; }
+
+.sellos { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.25rem 0 0; }
+.sellos span {
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  background: var(--tinta);
+  color: var(--superficie);
+  font-size: 0.75rem;
+}
+
+.pie { margin-top: auto; padding-top: 0.75rem; border-top: 1.5px solid var(--tinta); display: flex; flex-direction: column; gap: 0.6rem; }
+.precios { margin: 0; display: flex; align-items: baseline; gap: 0.6rem; }
+.precio { font-family: var(--titulo); font-size: 1.4rem; font-weight: 700; }
+.anterior { color: var(--suave); font-size: 0.9rem; }
+
+.btn, .btn-sec {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 2px solid var(--tinta);
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn { background: var(--tinta); color: var(--superficie); }
+.btn:hover:not(:disabled) { background: var(--loza); border-color: var(--loza); }
+.btn-sec { background: transparent; }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.vacio { grid-column: 1 / -1; color: var(--suave); }
+
+/* ---------- Aviso al pie ---------- */
+.aviso {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem clamp(1rem, 4vw, 3rem) 2.5rem;
+  border-top: 1px solid var(--borde);
+  color: var(--suave);
+  font-size: 0.85rem;
+}
+.aviso p { margin: 0; max-width: 70ch; }
+
+/* ---------- Carrito ---------- */
+dialog {
+  width: min(92vw, 460px);
+  padding: 1.5rem;
+  border: 0;
+  border-radius: 14px;
+  background: var(--superficie);
+  color: var(--tinta);
+}
+dialog::backdrop { background: rgba(29, 43, 39, 0.55); }
+dialog h2 { margin-bottom: 1rem; }
+
+.lineas { list-style: none; margin: 0; padding: 0; max-height: 50vh; overflow-y: auto; }
+.linea {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.4rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+.l-precio { text-align: right; font-weight: 600; }
+.cant { display: inline-flex; align-items: center; gap: 0.6rem; }
+.cant button {
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 1.5px solid var(--tinta);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.total { display: flex; justify-content: space-between; margin: 1rem 0; font-size: 1.15rem; }
+.acciones { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: flex-end; }
+
+/* ---------- Móvil ---------- */
+@media (max-width: 520px) {
+  .filtros { flex-direction: column; align-items: stretch; }
+  .grilla { grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  .cuerpo { padding: 0.75rem; }
+  .cuerpo h3 { font-size: 1rem; }
+  .precio { font-size: 1.15rem; }
+  .btn { padding: 0.5rem 0.6rem; font-size: 0.9rem; }
+}
+@media (max-width: 340px) {
+  .grilla { grid-template-columns: 1fr; }
+}
