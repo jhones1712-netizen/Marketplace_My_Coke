@@ -11,7 +11,7 @@ const productos = [
     presentacion: "8 porciones",
     precio: 71000,
     precioAnterior: null,
-    imagen: "IMG/torta-almojabana.jpg",
+    imagen: "img/torta-almojabana.jpg",
     sellos: []
   },
   {
@@ -22,7 +22,7 @@ const productos = [
     presentacion: "20 porciones",
     precio: 75000,
     precioAnterior: null,
-    imagen: "IMG/torta-casera.jpg",
+    imagen: "img/torta-casera.jpg",
     sellos: []
   },
   {
@@ -33,7 +33,7 @@ const productos = [
     presentacion: "230 g · 6 porciones",
     precio: 5385,
     precioAnterior: 7180,
-    imagen: "IMG/ponque-ramo.jpg",
+    imagen: "img/ponque-ramo.jpg",
     sellos: ["Exceso en azúcares", "Exceso en grasas saturadas"]
   },
   {
@@ -44,7 +44,7 @@ const productos = [
     presentacion: "500 g",
     precio: 8250,
     precioAnterior: null,
-    imagen: "IMG/pan-artesano-bimbo.jpg",
+    imagen: "img/pan-artesano-bimbo.jpg",
     invima: "NSA-0011644-2021",
     sellos: ["Exceso en sodio"]
   },
@@ -56,7 +56,7 @@ const productos = [
     presentacion: "450 g",
     precio: 2980,
     precioAnterior: null, // el descuento real era de $10, no se muestra
-    imagen: "IMG/pan-frescampo.jpg",
+    imagen: "img/pan-frescampo.jpg",
     sellos: ["Exceso en sodio"]
   },
 
@@ -69,7 +69,7 @@ const productos = [
     presentacion: "500 g",
     precio: 9150,
     precioAnterior: null,
-    imagen: "IMG/pan-artesano-mantequilla.jpg",
+    imagen: "img/pan-artesano-mantequilla.jpg",
     invima: "RSIAE11M04796",
     sellos: []
   },
@@ -81,7 +81,7 @@ const productos = [
     presentacion: "355 g",
     precio: 13200,
     precioAnterior: null,
-    imagen: "IMG/pan-banano-nueces.jpg",
+    imagen: "img/pan-banano-nueces.jpg",
     sellos: []
   },
   {
@@ -92,7 +92,7 @@ const productos = [
     presentacion: "114 g · 4 porciones · frasco",
     precio: 10990,
     precioAnterior: null,
-    imagen: "IMG/galletas-danima.jpg",
+    imagen: "img/galletas-danima.jpg",
     invima: "NSA-0013428-2023",
     sellos: []
   },
@@ -104,7 +104,7 @@ const productos = [
     presentacion: "430 g · vegano, sin azúcar, fibra prebiótica",
     precio: 9675,
     precioAnterior: null,
-    imagen: "IMG/pan-coco-fitcook.jpg",
+    imagen: "img/pan-coco-fitcook.jpg",
     sellos: []
   }
 ];
